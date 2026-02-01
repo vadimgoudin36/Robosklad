@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.labs.courseProject.controller.WarehouseController">
+
+    <!-- Верх -->
+    <top>
+        <Label text="Автоматизированный склад с роботами-комплектовщиками"
+               style="-fx-font-size: 18px; -fx-padding: 10;" />
+    </top>
+
+    <!-- Центр -->
+    <center>
+        <Pane fx:id="warehousePane"
+              minWidth="800"
+              minHeight="500"
+              prefWidth="800"
+              prefHeight="500"
+              style="-fx-background-color: #f2f2f2; -fx-border-color: gray;" />
+    </center>
+
+    <!-- Левая панель -->
+    <left>
+        <VBox spacing="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Роботы"/>
+
+            <TableView fx:id="robotTable" prefWidth="300">
+                <columns>
+                    <TableColumn text="Имя" fx:id="robotNameCol"/>
+                    <TableColumn text="Заряд (%)" fx:id="batteryCol"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </left>
+
+    <!-- Правая панель -->
+    <right>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Стеллажи"/>
+            <ListView fx:id="rackList" prefHeight="150"/>
+
+            <Label text="Заказы"/>
+            <ListView fx:id="orderList" prefHeight="150"/>
+
+            <Button text="Назначить и запустить"
+                    onAction="#startSimulation"/>
+        </VBox>
+    </right>
+
+    <!-- Низ -->
+    <bottom>
+        <HBox spacing="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Статус:"/>
+            <Label fx:id="statusLabel" text="Ожидание запуска"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

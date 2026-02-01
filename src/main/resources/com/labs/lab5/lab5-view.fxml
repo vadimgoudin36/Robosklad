@@ -1,0 +1,20 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<VBox spacing="10" alignment="CENTER"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.labs.lab5.controller.FifthLabController">
+
+    <Pane fx:id="paintPane" prefWidth="400" prefHeight="300"/>
+
+    <CheckBox fx:id="tintedCheckBox"
+              text="Тонировка"
+              onAction="#onOptionsChanged"/>
+
+    <CheckBox fx:id="wheelsCheckBox"
+              text="Спортивные колеса"
+              onAction="#onOptionsChanged"/>
+
+    <Label fx:id="statusLabel"/>
+</VBox>
